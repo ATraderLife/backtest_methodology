@@ -22,7 +22,7 @@ To calculate the total number of iterations (given the limits we set above) we h
 ### See you in 11 years
 Of course you want the result in the next few days and not in a decade.
 
-One solution is to fire up multiple instances of our backtester, but we will need 90,277 of those to have the result in a day, and computational power is not free. 
+One solution is to fire up multiple instances of our backtester, but we will need 4,060 of those to have the result in a day, and computational power is not free. 
 
 So another solution must be found.
 ### What is a heuristic
