@@ -59,3 +59,8 @@ You can find the forward tests [here](data/results_1626429053825.csv) and the fi
 We do as well. For that, we have to keep the previous settings a constant and iterate through the settings that affect only the short entries. That is `Total_iterations = 31 * 31 *4 = 3,844 or about 80 minutes`. We did this for a few of the top "long" settings that we found.
 ### Are you going to give us the results or should we hunt you down?
 We are finally on the home stretch. Here are the results for the [`true, 13, 2, 0.30, 0.40`](data/results_1626487483582.csv), the [`true, 14, 1, 0.35, 0.45`](data/results_1626527514686.csv), and the [`true, 7, 1, 0.35, 0.45`](data/results_1626535826398.csv).
+## Conclusion
+### What are the best settings?
+The "best"? We do not know. Do you only care about net profit? Do you care about drawdown? Profit Ratio? Profitability %? Everyone has a different definition about "best".
+### You are useless and this whole document was a waste of my time.
+We know.
