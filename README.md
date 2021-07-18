@@ -47,15 +47,15 @@ With our current speed, we can iterate though 18,252 options in **6 hours and 20
 ### Did you run any tests or are you all talk
 We did run tests on the `BINANCE:ETHUST` pair on the 1 hour chart.
 ### Were are your results for that?
-You can find them [here](data\results_1626389047259.csv).
+You can find them [here](data/results_1626389047259.csv).
 ### So, did you found the best setting for long, right?
 Not yet. A good testing requires both backwards and forwards testings. Given the limits imposed by Tradingview, we could only test from 01/01/2019 on the 1 hour chart. So, we decided to run a backwards test from 01/01/2019 to 31/12/2020, take the best 100 results and then run forward tests from 01/01/2020 to 17/07/2021 on those.
 
 We then used a weighted average of the two results and came to a conclusion.
 ### Finally. Now gimme.
-You can find the forward tests [here](data\results_1626429053825.csv) and the final results [here](data\final.csv).
+You can find the forward tests [here](data/results_1626429053825.csv) and the final results [here](data/final.csv).
 ## Time to short
 ### But I want to short as well
 We do as well. For that, we have to keep the previous settings a constant and iterate through the settings that affect only the short entries. That is `Total_iterations = 31 * 31 *4 = 3,844 or about 80 minutes`. We did this for a few of the top "long" settings that we found.
 ### Are you going to give us the results or should we hunt you down?
-We are finally on the home stretch. Here are the results for the [`true, 13, 2, 0.30, 0.40`](data\results_1626487483582.csv), the [`true, 14, 1, 0.35, 0.45`](data\results_1626527514686.csv), and the [`true, 7, 1, 0.35, 0.45`](data\results_1626535826398.csv).
+We are finally on the home stretch. Here are the results for the [`true, 13, 2, 0.30, 0.40`](data/results_1626487483582.csv), the [`true, 14, 1, 0.35, 0.45`](data/results_1626527514686.csv), and the [`true, 7, 1, 0.35, 0.45`](data/results_1626535826398.csv).
