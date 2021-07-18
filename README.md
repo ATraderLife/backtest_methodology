@@ -3,10 +3,10 @@
 ### Goal
 The goal is to find the most profitable settings for the DOMINUS strategy.
 ### Scope
-The current DOMINUS version (v2) has 10 different variables that affect entries and exits (not including the 9 variables for the ADX and the BB). We built an automation that iterates though the permutations of those settings and saves the results in a `.csv` file for data analysis.
+The current DOMINUS version (v2) has 10 different variables that affect entries and exits (not including the 9 variables for the ADX and the BB). We built an automation that iterates though the permutations of those settings and save the results in a `.csv` file for data analysis.
 ## Too many info
 ### The permutational problem
-Those of you that have experience with permutations will have already spotted the first big hurdle of this approach. For the rest, here is what we face:
+Those of you that have experience with permutations will already have spotted the first big hurdle of this approach. For the rest, here is what we face:
 * The `Heiken Ashi` setting can take 2 values (true or false).
 * The `Length` setting is a positive integer that can take infinite values, so we have to limit is. Let's limit it to 18 options for now (3-20).
 * The `PcntChange` is a positive real number that pose tha same problem. Let's limit it to 3 options (1, 2, and 3).
@@ -22,13 +22,13 @@ To calculate the total number of iterations (given the limits we set above) we h
 ### See you in 11 years
 Of course you want the result in the next few days and not in a decade.
 
-One solution to that is to fire up multiple instances of our backtester, but we will need 90,277 of those to have the result in a day, and computational power is not free. 
+One solution is to fire up multiple instances of our backtester, but we will need 90,277 of those to have the result in a day, and computational power is not free. 
 
 So another solution must be found.
 ### What is a heuristic
 > A heuristic or heuristic technique (/hjʊəˈrɪstɪk/; Ancient Greek: εὑρίσκω, heurískō, 'I find, discover'), is any approach to problem solving or self-discovery that employs a practical method that is not guaranteed to be optimal, perfect, or rational, but is nevertheless sufficient for reaching an immediate, short-term goal or approximation. Where finding an optimal solution is impossible or impractical, heuristic methods can be used to speed up the process of finding a satisfactory solution. Heuristics can be mental shortcuts that ease the cognitive load of making a decision.
 ### Divine and conquer
-If you played with the DOMINUS settings yourself, and especially if you have disabled the `ShortEntry`, you might have noticed that it is not affecting the number or timing of the long entries. Given that the DOMINUS strategy is based on the One Tool to Rule them All, this might not come as a surprise to you.
+If you've already played with the DOMINUS settings yourself, and especially if you have disabled the `ShortEntry`, you might have noticed that it is not affecting the number or timing of the long entries. Given that the DOMINUS strategy is based on the One Tool to Rule them All, this might not come as a surprise to you.
 
 What that means though for our case is that we can split the problem in two.
 * Find the best settings for long entries
@@ -36,13 +36,13 @@ What that means though for our case is that we can split the problem in two.
 ### Why does this make any difference?
 As we saw on the ["The permutational problem"](#The-permutational-problem), each extra setting multiplies the total iterations by it's options. So if we remove a setting we can divide the total.
 
-So, keeping the `ShortEntry` to false drops the total to 140,321,376.  
-Then, keeping the `LongEntry` to true drops the total to 70,160,688.  
+So, setting the `ShortEntry` to false, the total drops to 140,321,376.
+Then, setting the `LongEntry` to true, the total is 70,160,688.  
 Then, by not iterating through the `SL % for Short Entries` (since it does not affect the longs), we can divide by 31 to get 2,263,248.  
 Doing the same for the `TP % for Short Entries`, we divide again by 31, for a total of 73,008.  
 Finally, keeping the `Entry_numbers` (another setting that only affects short entries) a constant, we divide by 4 for a final total of 18,252.
 
-With our current speed, we can iterate though 18,252 options in **6 hours and 20 minutes**.
+With our current speed, we can iterate through 18,252 options in **6 hours and 20 minutes**.
 ## Running the tests
 ### Did you run any tests or are you all talk
 We did run tests on the `BINANCE:ETHUST` pair on the 1 hour chart.
